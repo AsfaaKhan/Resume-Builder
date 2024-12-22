@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="navbar bg-white">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="brand-and-toggle">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="./img/curriculum-vitae.png" alt="" class="navbar-brand-icon">
+                        <span class="navbar-brand-text">Resume <span>Builder</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--   RESUME FORM GENERATOR -->
+
+    <section id="about-section" class="non-print-section">
+        <div class="container">
+            <div class="about-container">
+                <form class="cv-form" id="cv-form">
+                    <h1 class="name" style="margin-top: 40px; font-size: larger; margin-bottom: 5rem;">Build Resume</h1>
+                    <!-- ABOUT SECTION -->
+                    <div class="cv-form-blank">
+                        <div class="cv-form-row-title">
+                            <h3>About Section</h3>
+                        </div>
+                        <div class="cv-form-row  cv-form-about">
+
+                            <div class="column-3">
+
+                                <div class="form-element">
+                                    <label for="" class="form-label">First Name</label>
+                                    <input type="text" name="firstname" class="form-control firstname" id=""
+                                        placeholder="Enter Your First Name" required>
+                                    <span class="form-text"></span>
+                                </div>
+
+                                <div class="form-element">
+                                    <label for="" class="form-label">Last Name</label>
+                                    <input type="text" name="lastname" class="form-control lastname" id=""
+                                        placeholder="Enter Your Last Name" required>
+                                    <span class="form-text"></span>
+                                </div>
+
+                                <div class="form-element">
+                                    <label for="" class="form-label">Your Image</label>
+                                    <input name="image" type="file" class="form-control image" placeholder="" alt=""
+                                        id="" accept="image/*" onchange="previewImage()">
+                                </div>
+                            </div>
+
+                            <div class="column-3">
+
+
+                                <div class="form-element">
+                                    <label for="" class="form-label">Designation</label>
+                                    <input type="text" name="designation" class="form-control designation" id=""
+                                        placeholder="e.g. Accountant" required>
+                                    <span class="form-text"></span>
+                                </div>
+
+                                <div class="form-element">
+                                    <label for="" class="form-label">Address</label>
+                                    <input type="text" name="address" class="form-control address" id=""
+                                        placeholder="e.g. DHA phase-3" required>
+                                    <span class="form-text"></span>
+                                </div>
+
+                                <div class="form-element">
+                                    <label for="" class="form-label">Email</label>
+                                    <input type="text" name="email" class="form-control email" id=""
+                                        placeholder="e.g. albert12@gmail.com">
+                                    <span class="form-text"></span>
+                                </div>
+                            </div>
+
+                            <div class="column-3">
+
+
+                                <div class="form-element">
+                                    <label for="" class="form-label">Contact no.</label>
+                                    <input type="text" name="contactno" class="form-control contactno" id=""
+                                        placeholder="0314-0000001">
+                                    <span class="form-text"></span>
+                                </div>
+
+
+                                <div class="form-element">
+                                    <label for="" class="form-label">Summary</label>
+                                    <input type="text" name="summary" class="form-control summary" id=""
+                                        placeholder="write summary">
+                                    <span class="form-text"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- EXPERIENCE -->
+                    <div class="cv-form-blank">
+                        <div class="cv-form-row-title">
+                            <h3>Experience</h3>
+                        </div>
+
+                        <div class="row-seperator repeater">
+                            <div class="repeater" data-repeater-list="group-b">
+                                <div data-repeater-item>
+                                    <div class="cv-form-row cv-form-experience">
+                                        <div class="column-3">
+                                            <div class="form-element">
+                                                <label for="" class="form-label">Title</label>
+                                                <input type="text" name="experience-title"
+                                                    class="form-control experience-title" id="">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <div class="form-element">
+                                                <label for="" class="form-label">Company / Oraganization</label>
+                                                <input type="text" name="experience-company"
+                                                    class="form-control experience-company " id=""
+                                                    placeholder="e.g. XYZ Company">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <div class="form-element">
+                                                <label for="" class="form-label">Location</label>
+                                                <input type="text" name="experience-location"
+                                                    class="form-control experience-location " id="">
+                                                <span class="form-text"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="column-3">
+                                            <div class="form-element">
+                                                <label for="" class="form-label">Start Date</label>
+                                                <input type="date" name="experience-start-date"
+                                                    class="form-control experience-start-date" id="">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <div class="form-element">
+                                                <label for="" class="form-label">End Date</label>
+                                                <input type="date" name="experience-end-date"
+                                                    class="form-control experience-end-date " id="">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <div class="form-element">
+                                                <label for="" class="form-label">Description</label>
+                                                <input type="text" name="experience-description"
+                                                    class="form-control experience-description " id=""
+                                                    placeholder="Breif Description">
+                                                <span class="form-text"></span>
+                                            </div>
+                                        </div>
+                                        <button data-repeater-delete type="button"
+                                            class="repeater-remove-btn">-</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" data-repeater-create class="repeater-add-btn">+</button>
+                        </div>
+                    </div>
+
+                    <!-- EDUCATION -->
+                    <div class="cv-form-blank">
+                        <div class="cv-form-row-title">
+                            <h3>Education</h3>
+                        </div>
+
+                        <div class="row-seperator repeater">
+                            <div class="repeater" data-repeater-list="group-c">
+                                <div data-repeater-item>
+                                    <div class="cv-form-row cv-form-education">
+                                        <div class="column-3">
+                                            <div class="form-element">
+                                                <label for="" class="form-label">School / College / University Name
+                                                </label>
+                                                <input type="text" name="education-title"
+                                                    class="form-control education-title" id="">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <div class="form-element">
+                                                <label for="" class="form-label">Degree</label>
+                                                <input type="text" name="education-degree"
+                                                    class="form-control education-degree " id=""
+                                                    placeholder="Bachelor In Architechor">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <div class="form-element">
+                                                <label for="" class="form-label">City</label>
+                                                <input type="text" name="education-city"
+                                                    class="form-control education-city " id="">
+                                                <span class="form-text"></span>
+                                            </div>
+                                        </div>
+                                        <div class="column-3">
+                                            <div class="form-element">
+                                                <label for="" class="form-label">Start Date</label>
+                                                <input type="date" name="education-start-date"
+                                                    class="form-control education-start-date" id="">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <div class="form-element">
+                                                <label for="" class="form-label">End Date</label>
+                                                <input type="date" name="education-end-date"
+                                                    class="form-control education-end-date " id="">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <div class="form-element">
+                                                <label for="" class="form-label">Description</label>
+                                                <input type="text" name="education-description"
+                                                    class="form-control education-description " id=""
+                                                    placeholder="Breif Description">
+                                                <span class="form-text"></span>
+                                            </div>
+                                        </div>
+
+
+                                        <button data-repeater-delete type="button"
+                                            class="repeater-remove-btn">-</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" data-repeater-create class="repeater-add-btn">+</button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- SKILLS -->
+                    <div class="cv-form-blank">
+                        <div class="cv-form-row-title">
+                            <h3>Skills</h3>
+                        </div>
+
+                        <div class="row-seperator repeater">
+                            <div class="repeater" data-repeater-list="group-e">
+                                <div data-repeater-item>
+
+                                    <div class="cv-form-row cv-form-skill">
+                                        <div class="form-element">
+                                            <label for="" class="form-label">Skills</label>
+                                            <input type="text" name="skills" class="form-control skills " id=""
+                                                placeholder="Bachelor In Architechor">
+                                            <span class="form-text"></span>
+                                        </div>
+
+                                        <button data-repeater-delete type="button"
+                                            class="repeater-remove-btn">-</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" data-repeater-create class="repeater-add-btn">+</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <button class="btn btn-primary" id="generateCV" onclick="generateCV()">Generate CV</button>
+        </div>
+    </section>
+
+
+    <!-- Generate Resume  -->
+    <div class="container cv-form print-area">
+        <div class="profile">
+            <div class="profile-container ">
+                <div class="profile-img ">
+                    <img src="./img/pngaaa.com-5166616.png" alt="profile image">
+                </div>
+                <div>
+                    <h1 class="profile-name">
+                        <span class="profile-firstName"></span>
+                        <span class="profile-lastName"></span>
+                    </h1>
+                    <p class="title"></p>
+                    <p class="description"></p>
+
+                </div>
+            </div>
+        </div>
+        <!-- MAIN SECTION -->
+         <div class="main">
+        <div class="group1">
+            <div class="skills" id="skills">
+                <h3 class="title">Skills</h3>
+                <ul class="skills-list description">
+                    <li></li>
+                </ul>
+            </div>
+
+
+            <div class="education" id="education">
+                <h3 class="title">Education</h3>
+                <div class="edu-items ">
+                    <p class="item-preTitle"></p>
+                    <h4 class="item-title"> </h4>
+                    <p class="item-subTitle"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="group2">
+            <div class="exp" id="exp">
+                <h3 class="title">Experience</h3>
+                <div class="exp-item">
+                    <p class="experience-start-date"></p>
+                    <p class="experience-end-date"></p>
+                    <p class="experience-title"></p>
+                    <p class="experience-company"></p>
+                    <p class="experience-location"></p>
+                    <p class="experience-description"></p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact">
+                <h3 class="title">contact<h3>
+                        <div class="contact-info">
+                            <p class="description"></p>
+                            <p class="description"></p>
+                            <p class="description"></p>
+                        </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    </div>
+
+    </div>
+    <hr>
+    </div>
+
+
+
+
+    <!-- Print resume -->
+    <section class="print-btn-section">
+        <div class="container">
+            <button type="button" class="print-btn btn btn-primary" onclick="printCV()">Print Resume</button>
+        </div>
+    </section>
+
+
+
+
+    <!-- PREVIEW RESUME -->
+    <!----<div class="container print-area">
+        <div class="profile">
+            <div class="profile-container ">
+                <div class="profile-img">
+                    <img src="./img/pngaaa.com-5166616.png" alt="This Is Asfaa Profile Image" id="image-display">
+                </div>
+                <div>
+                    <h1 class="profile-name">
+                        <span class="profile-firstName">Asfaa </span>
+                        <span class="profile-lastName">Khan</span>
+                    </h1>
+                    <p class="title">Web Developer</p>
+                    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam,
+                        assumenda
+                        eveniet nihil consectetur iusto perferendis aperiam iure. Ipsam, qui adipisci quod libero,
+                        corrupti
+                        veritatis praesentium quasi, quos soluta dignissimos omnis!</p>
+                    <!-- <a  class="download-btn non-print-section " href="./cv.pdf" download="Resume.pdf">Download Resume</a> 
+                </div>
+            </div>
+        </div>
+        <!-- MAIN SECTION 
+        <div class="group1">
+            <div class="skills" id="skills" >
+                <h3 class="title">Skills</h3>
+                <ul class="skills-list description">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Typescript</li>
+                    <li>NextJS</li>
+                </ul>
+            </div>
+            <button class="non-print-section" onclick="hide_Show()">Toggle Skills</button>
+
+            <div class="ref" id="ref">
+                <h3 class="title ">Reference</h3>
+                <div class="ref-item ">
+                    <h4 class="ref-name">Naeem Khan</h4>
+                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptate
+                        nostrum perspiciatis voluptatibus, atque enim temporibus veritatis sunt inventore natus.</p>
+                </div>
+                <div class="ref-name">
+                    <h4 class="ref-name">Naeem Khan</h4>
+                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptate
+                        nostrum perspiciatis voluptatibus, atque enim temporibus veritatis sunt inventore natus.</p>
+                </div>
+            </div>
+            <button class="non-print-section" onclick="hide_Show1()">Toggle Reference</button>
+
+            <div class="education" id="education" >
+                <h3 class="title">Education</h3>
+                <div class="edu-items ">
+                    <p class="item-preTitle">2020-2022</p>
+                    <h4 class="item-title">BACHELOR IN COMMERCE </h4>
+                    <p class="item-subTitle">Karachi University</p>
+                </div>
+                <div class="edu-items">
+                    <p class="item-preTitle">2018-2020</p>
+                    <h4 class="item-title">INTERMEDIATE - PRE-ENGINNERING </h4>
+                    <p class="item-subTitle">Govt.Girls college</p>
+                </div>
+                <div class="edu-items">
+                    <p class="item-preTitle">2016-2018</p>
+                    <h4 class="item-title">MATRICULATION - SCIENCE </h4>
+                    <p class="item-subTitle">Karachi University</p>
+                </div>
+
+            </div>
+            <button class="non-print-section" onclick="hide_Show2()">Toggle Education</button>
+            <div class="certification" id="certification">
+                <h3 class="title">Certificates</h3>
+                <div class="certification-item">
+                    <p class="item-preTitle">2019</p>
+                    <p class="item-title">Web Developer</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dolorum
+                        obcaecati error accusantium velit ipsa eligendi autem perspiciatis ducimus dolor?</p>
+                </div>
+            </div>
+            <button class="non-print-section" onclick="hide_Show3()">Toggle Certification</button>
+        </div>
+
+
+        <div class="group2">
+            <div class="exp" id="exp">
+                <h3 class="title">Experience</h3>
+                <div class="exp-item">
+                    <p class="item-preTitle">2024 - present</p>
+                    <p class="item-title">Private School</p>
+                    <p class="item-subTitle">Secondary Teacher</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laborum
+                        facilis ex, qui, quaerat asperiores repellendus suscipit itaque quod aperiam molestias, natus
+                        eius. Repellendus, quibusdam!</p>
+
+                </div>
+                <div class="exp-item">
+                    <p class="item-preTitle">2024 - present</p>
+                    <p class="item-title">Private School</p>
+                    <p class="item-subTitle">Secondary Teacher</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laborum
+                        facilis ex, qui, quaerat asperiores repellendus suscipit itaque quod aperiam molestias, natus
+                        eius. Repellendus, quibusdam!</p>
+
+                </div>
+            </div>
+            <button class="non-print-section" onclick="hide_Show4()">Toggle Experience</button>
+
+            <div class="award" id="award">
+                <h3 class="title">Awards</h3>
+                <div class="award-item">
+                    <p class="item-preTitle">2022</p>
+                    <p class="item-title">Best Teacher Award</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae at provident
+                        commodi labore dignissimos nemo! Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="award-item">
+                    <p class="item-preTitle">2022</p>
+                    <p class="item-title">Best Teacher Award</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae at provident
+                        commodi labore dignissimos nemo! Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <button class="non-print-section" onclick="hide_Show5()">Toggle Awards</button>
+            <div class="interest" id="interest" >
+            <h3 class="title">Interest</h3>
+            <div class="interest-items">
+                <div class="item">
+                    <i> <img src="./img/musical-note.png"><span>Music</span></i>
+                </div>
+                <div class="item">
+                    <i> <img src="./img/book.png"><span>Books </span></i>
+                </div>
+                <div class="item">
+                    <i> <img src="./img/maps-and-flags.png"><span>Travelling</span></i>
+                </div>
+            </div>
+        </div>
+        <button class="non-print-section" onclick="hide_Show6()">Toggle Interest</button>
+        </div>
+
+        <hr>
+        <div class="group3">
+            <div class="contact">
+                <h3 class="title">contact<h3>
+                        <div class="contact-info">
+                            <p class="description">Karachi, Pakistan</p>
+                            <p class="description">0315-5183586</p>
+                            <p class="description">asfaa@gmail.com</p>
+                        </div>
+            </div>
+
+            <div class="title">Socials
+                <div class="social-items">
+
+                    <a href="#" class="social-item">
+                        <img src="./img/github.png">
+                        <span>AsfaaKhan</span>
+
+
+                        <a href="#" class="social-item">
+                            <img src="./img/message.png">
+                            <span>asfaakhan</span>
+                        </a>
+
+                        <a href="#" class="social-item">
+                            <img src="./img/twitter.png">
+                            <span>AsfaaKhan</span>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div> ---->
+
+
+
+
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- jQuery repeater cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"
+        integrity="sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
