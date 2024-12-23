@@ -396,10 +396,15 @@ textarea {
 /* print section */
 @media print{
     @page{
+        margin-top: 20mm;
+        page-break-before: always;
         margin: 0;
     }
         body{
-            margin: 0;
+            margin: 20mm;
+        }
+        h1, h2 , h3 , h4 , p{
+            page-break-before: avoid;
         }
     body * {
         visibility: hidden;
@@ -416,6 +421,7 @@ textarea {
         left: 0;
         top: 0;
         overflow: hidden;
+        page-break-after: always;
     }
 }
 
