@@ -21,27 +21,6 @@ $(document).ready(function (): void {
 })
 
 
-// Generate Resume 
-
-
-
-
-
-// function previewImage() {
-//     const imageInput = document.querySelector('.image') as HTMLInputElement;
-//     const imageDisplay = document.getElementById('image-display') as HTMLImageElement;
-//     if (imageInput.files && imageInput.files[0]) {
-//         const reader = new FileReader();
-//         reader.onload = function (e: any) {
-//             imageDisplay.src = e.target.result as string;
-//         }
-//         reader.readAsDataURL(imageInput.files[0]);
-//     }
-// }
-
-
-
-
 //  Generate CV
 document.getElementById('generateCV')?.addEventListener('click', generateCV);
 
@@ -54,7 +33,6 @@ function generateCV() {
     const address = (document.querySelector('.address') as HTMLInputElement).value;
     const email = (document.querySelector('.email') as HTMLInputElement).value;
     const contactNo = (document.querySelector('.contactno') as HTMLInputElement).value;
-    const linkedin = (document.querySelector('.linkdlin') as HTMLInputElement).value;
     const summary = (document.querySelector('.summary') as HTMLInputElement).value;
 
 
@@ -95,10 +73,10 @@ function generateCV() {
     });
 
     // Update the CV section
-    updateCVSection(firstName, lastName, image, designation, address, email, contactNo, linkedin, summary, experienceList, educationList, skillList);
+    updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experienceList, educationList, skillList);
 }
 
-function updateCVSection(firstName: string, lastName: string, image: File | undefined, designation: string, address: string, email: string, contactNo: string, linkedin: string, summary: string, experiences: any[], educations: any[], skills: string[]) {
+function updateCVSection(firstName: string, lastName: string, image: File | undefined, designation: string, address: string, email: string, contactNo: string, summary: string, experiences: any[], educations: any[], skills: string[]) {
     // Update Profile Section
     const profileFirstName = document.querySelector('.profile-firstName') as HTMLElement;
     const profileLastName = document.querySelector('.profile-lastName') as HTMLElement;
@@ -130,6 +108,7 @@ function updateCVSection(firstName: string, lastName: string, image: File | unde
             <p class="item-preTitle">${edu.startDate} - ${edu.endDate}</p>
             <h4 class="item-title">${edu.title}</h4>
             <p class="item-subTitle">${edu.degree} - ${edu.city}</p>
+            <p class= "description">${edu.description}</p>
         </div>
     `).join('');
 

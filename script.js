@@ -17,18 +17,6 @@ $(document).ready(function () {
         isFirstItemUndeletable: true
     });
 });
-// Generate Resume 
-function previewImage() {
-    var imageInput = document.querySelector('.image');
-    var imageDisplay = document.getElementById('image-display');
-    if (imageInput.files && imageInput.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            imageDisplay.src = e.target.result;
-        };
-        reader.readAsDataURL(imageInput.files[0]);
-    }
-}
 //  Generate CV
 (_a = document.getElementById('generateCV')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', generateCV);
 function generateCV() {
@@ -41,7 +29,6 @@ function generateCV() {
     var address = document.querySelector('.address').value;
     var email = document.querySelector('.email').value;
     var contactNo = document.querySelector('.contactno').value;
-    var linkedin = document.querySelector('.linkdlin').value;
     var summary = document.querySelector('.summary').value;
     // Get Experience values
     var experiences = document.querySelectorAll('.cv-form-experience');
@@ -75,9 +62,9 @@ function generateCV() {
         skillList.push(skill);
     });
     // Update the CV section
-    updateCVSection(firstName, lastName, image, designation, address, email, contactNo, linkedin, summary, experienceList, educationList, skillList);
+    updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experienceList, educationList, skillList);
 }
-function updateCVSection(firstName, lastName, image, designation, address, email, contactNo, linkedin, summary, experiences, educations, skills) {
+function updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experiences, educations, skills) {
     // Update Profile Section
     var profileFirstName = document.querySelector('.profile-firstName');
     var profileLastName = document.querySelector('.profile-lastName');
@@ -102,7 +89,7 @@ function updateCVSection(firstName, lastName, image, designation, address, email
     skillsList.innerHTML = skills.map(function (skill) { return "<li>".concat(skill, "</li>"); }).join('');
     // Update Education Section
     var educationSection = document.querySelector('.edu-items');
-    educationSection.innerHTML = educations.map(function (edu) { return "\n        <div class=\"edu-items\">\n            <p class=\"item-preTitle\">".concat(edu.startDate, " - ").concat(edu.endDate, "</p>\n            <h4 class=\"item-title\">").concat(edu.title, "</h4>\n            <p class=\"item-subTitle\">").concat(edu.degree, " - ").concat(edu.city, "</p>\n        </div>\n    "); }).join('');
+    educationSection.innerHTML = educations.map(function (edu) { return "\n        <div class=\"edu-items\">\n            <p class=\"item-preTitle\">".concat(edu.startDate, " - ").concat(edu.endDate, "</p>\n            <h4 class=\"item-title\">").concat(edu.title, "</h4>\n            <p class=\"item-subTitle\">").concat(edu.degree, " - ").concat(edu.city, "</p>\n            <p class= \"description\">").concat(edu.description, "</p>\n        </div>\n    "); }).join('');
     // Update Experience Section
     var experienceSection = document.querySelector('.exp-item');
     experienceSection.innerHTML = experiences.map(function (exp) { return "\n        <div class=\"exp-item\">\n            <p class=\"item-preTitle\">".concat(exp.startDate, " - ").concat(exp.endDate, "</p>\n            <p class=\"item-title\">").concat(exp.title, "</p>\n            <p class=\"item-subTitle\">").concat(exp.company, " - ").concat(exp.location, "</p>\n            <p class=\"description\">").concat(exp.description, "</p>\n        </div>\n    "); }).join('');
