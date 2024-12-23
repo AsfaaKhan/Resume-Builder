@@ -61,10 +61,17 @@ function generateCV() {
         var skill = skillElement.querySelector('.skills').value;
         skillList.push(skill);
     });
+    // Get Hobbies values
+    var hobbies = document.querySelectorAll('.cv-form-hobbie');
+    var hobbieList = [];
+    hobbies.forEach(function (hobbieElement) {
+        var hobbie = hobbieElement.querySelector('.hobbies').value;
+        hobbieList.push(hobbie);
+    });
     // Update the CV section
-    updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experienceList, educationList, skillList);
+    updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experienceList, educationList, skillList, hobbieList);
 }
-function updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experiences, educations, skills) {
+function updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experiences, educations, skills, hobbies) {
     // Update Profile Section
     var profileFirstName = document.querySelector('.profile-firstName');
     var profileLastName = document.querySelector('.profile-lastName');
@@ -87,6 +94,9 @@ function updateCVSection(firstName, lastName, image, designation, address, email
     // Update Skills Section
     var skillsList = document.querySelector('.skills-list');
     skillsList.innerHTML = skills.map(function (skill) { return "<li>".concat(skill, "</li>"); }).join('');
+    // Update Hobbies Section
+    var hobbiesList = document.querySelector('.hobbies-list');
+    hobbiesList.innerHTML = hobbies.map(function (hobbie) { return "<li>".concat(hobbie, "</li>"); }).join('');
     // Update Education Section
     var educationSection = document.querySelector('.edu-items');
     educationSection.innerHTML = educations.map(function (edu) { return "\n        <div class=\"edu-items\">\n            <p class=\"item-preTitle\">".concat(edu.startDate, " - ").concat(edu.endDate, "</p>\n            <h4 class=\"item-title\">").concat(edu.title, "</h4>\n            <p class=\"item-subTitle\">").concat(edu.degree, " - ").concat(edu.city, "</p>\n            <p class= \"description\">").concat(edu.description, "</p>\n        </div>\n    "); }).join('');

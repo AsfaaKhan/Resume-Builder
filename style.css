@@ -531,7 +531,7 @@ a {
 }
 
 .profile-firstName {
-    color: black;
+    color: var(--parimary-color);
     font-weight: 200;
     font-size: clamp(2rem, 8vw, 4rem);
     text-transform: uppercase;
@@ -543,7 +543,7 @@ a {
 .profile-lastName {
     color: var(--parimary-color);
     font-weight: 300;
-    font-size: clamp(2.5rem, 15vw, 7rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     text-transform: uppercase;
     display: block;
 }
@@ -571,6 +571,12 @@ a {
 /* EXPERTISE */
 
 .skills-list {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    line-height: 2;
+}
+
+.hobbies-list {
     margin-top: 1rem;
     margin-left: 2rem;
     line-height: 2;

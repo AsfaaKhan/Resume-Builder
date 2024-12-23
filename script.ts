@@ -72,11 +72,19 @@ function generateCV() {
         skillList.push(skill);
     });
 
+     // Get Hobbies values
+     const hobbies = document.querySelectorAll('.cv-form-hobbie');
+     const hobbieList: string[] = [];
+     hobbies.forEach((hobbieElement: Element) => {
+         const hobbie = (hobbieElement.querySelector('.hobbies') as HTMLInputElement).value;
+         hobbieList.push(hobbie);
+     });
+
     // Update the CV section
-    updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experienceList, educationList, skillList);
+    updateCVSection(firstName, lastName, image, designation, address, email, contactNo, summary, experienceList, educationList, skillList, hobbieList);
 }
 
-function updateCVSection(firstName: string, lastName: string, image: File | undefined, designation: string, address: string, email: string, contactNo: string, summary: string, experiences: any[], educations: any[], skills: string[]) {
+function updateCVSection(firstName: string, lastName: string, image: File | undefined, designation: string, address: string, email: string, contactNo: string, summary: string, experiences: any[], educations: any[], skills: string[], hobbies: string[]) {
     // Update Profile Section
     const profileFirstName = document.querySelector('.profile-firstName') as HTMLElement;
     const profileLastName = document.querySelector('.profile-lastName') as HTMLElement;
@@ -100,6 +108,11 @@ function updateCVSection(firstName: string, lastName: string, image: File | unde
     // Update Skills Section
     const skillsList = document.querySelector('.skills-list') as HTMLElement;
     skillsList.innerHTML = skills.map(skill => `<li>${skill}</li>`).join('');
+
+    
+    // Update Hobbies Section
+    const hobbiesList = document.querySelector('.hobbies-list') as HTMLElement;
+    hobbiesList.innerHTML = hobbies.map(hobbie => `<li>${hobbie}</li>`).join('');
 
     // Update Education Section
     const educationSection = document.querySelector('.edu-items') as HTMLElement;
