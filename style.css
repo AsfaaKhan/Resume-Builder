@@ -273,10 +273,10 @@ textarea {
 }
 
 /*  RESUME PREVIEW */
-.print-area {
+/* .print-area {
     margin-top: 50px;
     margin-bottom: 50px;
-}
+} */
 
 .preview-container {
     border-radius: 5px;
@@ -433,12 +433,6 @@ textarea {
         page-break-before: always;
     }
 }
-
-
-
-
-
-
 
 
 
