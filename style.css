@@ -282,7 +282,7 @@ textarea {
     border-radius: 5px;
     display: grid;
     grid-template-columns: 32% auto;
-    box-shadow: rgba(32, 36, 30, 0.2) 0px 8px 24px;
+    /* box-shadow: rgba(32, 36, 30, 0.2) 0px 8px 24px; */
     overflow: hidden;
 }
 
